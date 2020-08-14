@@ -1,42 +1,25 @@
 /* eslint-disable */
 <template>
   <div>
-    <todo-list v-bind:todos='todos'></todo-list>
+    <div class='ui centered card'>
+      <div class='content'>
+        <div class='header'>{{ todo.title }}</div>
+        <div class='meta'>{{ todo.project }}</div>
+        <div class='extra content'>
+          <span class='right floated edit icon'>
+            <i class='edit icon'></i>
+          </span>
+        </div>
+      </div>
+      <div class='ui bottom attached green basic button' v-show='todo.done'>Completed</div>
+      <div class='ui bottom attached red basic button' v-show='!todo.done'>Complete</div>
+    </div>
   </div>
 </template>
 
 <script type = 'text/javascript' >
-import TodoList from './TodoList'
 export default {
-  components: {
-    TodoList
-  },
-  data () {
-    return {
-      todos: [
-        {
-          title: 'Todo A',
-          project: 'Project A',
-          done: false
-        },
-        {
-          title: 'Todo B',
-          project: 'Project B',
-          done: true
-        },
-        {
-          title: 'Todo C',
-          project: 'Project C',
-          done: false
-        },
-        {
-          title: 'Todo D',
-          project: 'Project D',
-          done: false
-        }
-      ]
-    }
-  }
+  props: ['todo']
 }
 </script>
 <style>
