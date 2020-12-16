@@ -1,4 +1,4 @@
-# todo-app
+# todo-app (Vue)
 
 > A sample todo application for learning
 
